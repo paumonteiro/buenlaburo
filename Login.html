@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Juanito Ya - Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli" />
+    <link rel="stylesheet" href="stylemaster.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header NAV BAR -->
+    <div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <a href="#"><img src="../img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="main">
+        <!-- formularios -->
+        <div class="row col-xs-12">
+          <h1>Iniciar sesión</h1>
+        </div>
+        <div class="row col-xs-12" id="usuariosRegistrados">
+          <h3>Ya tienes una cuenta</h3>
+          <form class="col-xs-12" action="calquierparte.html" method="post">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+              <p class="help-block">Insert text here</p>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+              <p class="help-block">Insert text here</p>
+            </div>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Recuérdame</span>
+            </label>
+            <br>
+            <button type="submit" class="col-xs-4 btn btn-default pull-right" name="button">Submit</button>
+          </form>
+        </div>
+
+        <div class="row col-xs-12" id="nuevosUsuarios">
+          <h3>Crea una cuenta</h3>
+          <form class="col-xs-12" action="calquierparte.html" method="post">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+              <p class="help-block">Insert text here</p>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+              <p class="help-block">Insert text here</p>
+            </div>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Recuérdame</span>
+            </label>
+            <br>
+            <button type="submit" class="col-xs-4 btn btn-default pull-right" name="button">Submit</button>
+          </form>
+        </div>
+
+      </div>
+
+
+      <!-- footer -->
+      <footer class="main-footer col-xs-12">
+        <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                  <a href="#"><img src="../img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+              </ul>
+            </div>
+          </nav>
+  		</footer>
+
+    </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+</html>
