@@ -89,7 +89,9 @@ button{
     padding-bottom: 30px;
 }
 
-
+.banner-foto{
+  display: none;
+}
 
 
 /* CONTENIDO LOGIN */
