@@ -2,6 +2,7 @@
 * { box-sizing: border-box; }
 ul { padding: 0; }
 li { list-style-type: none; }
+body { font-family: 'Muli', sans-serif; }
 
 .container {
   max-width: 100%;
@@ -108,6 +109,10 @@ button{
 
 /* Contenido Formulario Sing in */
 /* EL JUANITO YA QUE ESTA DE HEADER EN EL FORMULARIO SIGN IN */
+.main-header1{
+  position: absolute;
+}
+
 .logo-formulario {
   position: relative;
   left: 5px;
@@ -119,19 +124,19 @@ button{
 /* TITULO DEL FORMULARIO */
 .titulo-sign {
   position: relative;
-  left: 170px;
-  top: 100px;
+  left: 5px;
+  top: 150px;
 }
 
 /*EL FORMULARIO */
 .form-group {
   position: relative;
-  top: 20px;
+  top: 80px;
 }
 
 /*LOS INPUTS DEL FORMULARIO */
 .form-group input {
-  width: 100%;
+  width: 90%;
   height: 30px;
   position: relative;
   top: 100px;
@@ -156,6 +161,15 @@ button{
   cursor: pointer;
 }
 
+.remember-me{
+  position: relative;
+  top: 150px;
+}
+
+.forgot{
+  position: relative;
+  top: 500px;
+}
 
 /* BOTON DE CREATE ACCOUNT */
 .create-account {
