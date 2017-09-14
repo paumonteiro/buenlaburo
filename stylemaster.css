@@ -97,15 +97,6 @@ button{
 
 /* CONTENIDO LOGIN */
 
-/* Separación entre formularios */
-#usuariosRegistrados {
-  margin-bottom: 40px;
-}
-
-#nuevosUsuarios {
-  border-top: 1px solid #f1f1f1;
-  margin-bottom: 80px;
-}
 
 /* Contenido Formulario Sing in */
 /* EL JUANITO YA QUE ESTA DE HEADER EN EL FORMULARIO SIGN IN */
