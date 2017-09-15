@@ -120,13 +120,13 @@ button{
 }
 
 /*EL FORMULARIO */
-.form-group {
+/*.form-group {
   position: relative;
   top: 80px;
-}
+}*/
 
 /*LOS INPUTS DEL FORMULARIO */
-.form-group input {
+/*.form-group input {
   width: 90%;
   height: 30px;
   position: relative;
@@ -137,7 +137,7 @@ button{
 .form-group label {
   position: relative;
   top: 100px;
-}
+}*/
 
 /*BOTON DE SIGN IN */
 .sign-in {
