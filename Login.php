@@ -16,17 +16,17 @@
       <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
-                <a href="index.html"><img src="img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
+                <a href="index.php"><img src="img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
             </div>
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Productos</a></li>
               <li><a href="#">#JoinTheCrew</a></li>
               <li><a href="#">Contacto</a></li>
-              <li><a href="Faq.html">FAQS</a></li>
+              <li><a href="Faq.php">FAQS</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="formulario-bootstrap.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="Sign-up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
           </div>
         </nav>
@@ -34,7 +34,7 @@
       <div class="main">
         <!-- formularios -->
         <div class="row col-xs-12">
-          <h1>Crear cuenta</h1>
+          <h1>Iniciar sesión</h1>
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -60,6 +60,10 @@
                         </div>
 
                         <div class="form-group">
+                            <input type="checkbox" name="recordar" id="recordar"> Recordar usuario</label><br>
+                        </div>
+
+                        <div class="form-group">
                             <button type="submit" class="btn btn-default">Enviar</button>
                         </div>
                     </fieldset>
@@ -77,13 +81,13 @@
           <nav class="navbar navbar-inverse">
               <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="index.html"><img src="img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
+                    <a href="index.php"><img src="img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
                 </div>
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Productos</a></li>
                   <li><a href="#">#JoinTheCrew</a></li>
                   <li><a href="#">Contacto</a></li>
-                  <li><a href="Faq.html">FAQS</a></li>
+                  <li><a href="Faq.php">FAQS</a></li>
                 </ul>
               </div>
             </nav>
