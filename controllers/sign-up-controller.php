@@ -9,9 +9,19 @@ $errores = [];
 
 
 //Validación
+$firstname = trim($_POST['firstname']);
+if (empty($firstname)) {
+	$errores['firstname'] = 'El nombre es obligatorio';
+}
+
+$lastname = trim($_POST['lastname']);
+if (empty($lastname)) {
+	$errores['lastname'] = 'El apellido es obligatorio';
+}
+
 $nombre = trim($_POST['nombre']);
 if (empty($nombre)) {
-	$errores['nombre'] = 'El nombre es obligatorio';
+	$errores['nombre'] = 'El username es obligatorio';
 }
 
 $email = trim($_POST['email']);
@@ -23,21 +33,29 @@ if (empty($email)) {
 
 $password = trim($_POST['password']);
 if (empty($password)) {
-	$errores['password'] = 'El password es obligatorio';
+	$errores['password'] = 'La contraseña es obligatoria';
 }
 
 $repassword = trim($_POST['repassword']);
 if (empty($repassword)) {
-	$errores['repassword'] = 'Este campo es obligatorio';
+	$errores['repassword'] = 'Reingresar contraseña';
 } elseif ($repassword !== $password) {
-  $errores['repassword'] = 'Este password no coincide';
+  $errores['repassword'] = 'Esta contraseña no coincide';
+}
+
+if (getUserByUsername($nombre, '../db/usuarios.json')) {
+	$errores['nombre'] = 'El usuario ya existe en la base';
 }
 
 if (getUserByEmail($email, '../db/usuarios.json')) {
 	$errores['email'] = 'El email ya existe en la base';
 }
 
-if ($errores) {
+if (empty($_POST['genero'])) {
+	$errores['genero'] = 'El genero es obligatorio';
+}
+
+if (count($errores) > 0) {
 	$_SESSION['errores'] = $errores;
 	$_SESSION['inputsValues'] = $_POST;
 	header('Location: ../Sign-up.php');
@@ -47,6 +65,17 @@ if ($errores) {
 //Crear Imagen
 $imageName = uniqid();
 $nombreCompleto = guardarImagen('avatar', $imageName, '../avatares/');
+
+//Crear usuario
+$usuario = [
+	'firstname' => $firstname,
+	'lastname' => $lastname,
+	'nombre' => $nombre,
+	'email' => $email,
+	'password' => password_hash($password, PASSWORD_DEFAULT),
+	'genero' => $genero,
+	'avatar' => $nombreCompleto
+];
 
 //Recuperar data
 $usuarios = getUsers('../db/usuarios.json');
@@ -70,6 +99,9 @@ function guardarImagen($inputName, $imageName, $path)
 
 header('Location: ../exito.php');
 
+// session_destroy();
+// setcookie('posicion del cookie', 'valor del cookie', time()+tiempoquequierasennumeros);
+// setcookie('posicion del cookie', '', -1);
 
 
  ?>

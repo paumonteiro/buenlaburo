@@ -42,14 +42,8 @@
                     <fieldset>
 
                         <div class="form-group">
-                            <label for="nombre">Nombre completo:</label>
+                            <label for="nombre">Usuario:</label>
                             <input type="text" class="form-control" name="nombre" id="nombre" value="" />
-                            <span class="help-block"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" value="" />
                             <span class="help-block"></span>
                         </div>
 

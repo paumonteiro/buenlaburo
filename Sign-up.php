@@ -1,10 +1,13 @@
 <?php
 session_start();
 
+$firstname = $_SESSION['inputsValues']['firstname'] ?? '';
+$lastname = $_SESSION['inputsValues']['lastname'] ?? '';
 $nombre = $_SESSION['inputsValues']['nombre'] ?? '';
 $email = $_SESSION['inputsValues']['email'] ?? '';
 $password = $_SESSION['inputsValues']['password'] ?? '';
 $repassword = $_SESSION['inputsValues']['repassword'] ?? '';
+$genero = $_SESSION['inputsValues']['genero'] ?? '';
 
 ?>
 
@@ -25,18 +28,6 @@ $repassword = $_SESSION['inputsValues']['repassword'] ?? '';
       <!-- Header NAV BAR -->
     <div class="container">
 
-      <?php if (!empty($_SESSION['errores'])): ?>
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="alert alert-danger">
-                      <?php foreach ($_SESSION['errores'] as $value): ?>
-                          <p><?php echo $value; ?></p>
-                      <?php endforeach ?>
-                  </div>
-              </div>
-          </div>
-      <?php endif ?>
-
       <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -55,6 +46,22 @@ $repassword = $_SESSION['inputsValues']['repassword'] ?? '';
           </div>
         </nav>
 
+        <?php if (!empty($_SESSION['errores'])): ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        <?php foreach ($_SESSION['errores'] as $value): ?>
+                            <p><?php echo $value; ?></p>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
+
+        <?php unset($_SESSION['errores']); ?>
+
+
+
       <div class="main">
         <!-- formularios -->
         <div class="row col-xs-12">
@@ -62,35 +69,60 @@ $repassword = $_SESSION['inputsValues']['repassword'] ?? '';
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form  action="controllers/sign-up-controller.php" method="post">
+                <form  action="controllers/sign-up-controller.php" method="post" enctype="multipart/form-data">
                     <fieldset>
 
                         <div class="form-group">
-                            <label for="nombre">Nombre completo:</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $nombre ?>" required/>
+                            <label for="firstname">Nombre:</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $firstname ?>"/>
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Apellido:</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo $lastname ?>"/>
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Username:</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $nombre ?>"/>
                             <span class="help-block"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" value="<?php echo $email ?>" required/>
+                            <input type="email" class="form-control" name="email" id="email" value="<?php echo $email ?>"/>
                             <span class="help-block"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Contraseña: </label><br/>
-                            <input type="password" class="form-control" name="password" id="password" value="<?php echo $password ?>" required/>
+                            <input type="password" class="form-control" name="password" id="password" value="<?php echo $password ?>"/>
                             <span class="help-block"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Reingresar contraseña: </label><br/>
-                            <input type="password" class="form-control" name="repassword" id="" value="<?php echo $repassword ?>" required/>
+                            <input type="password" class="form-control" name="repassword" id="" value="<?php echo $repassword ?>"/>
+                            <span class="help-block"></spa  n>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genero">Genero: </label><br/>
+
+                            <input type=radio class="genero" name="genero" id="hombre" value="Hombre"/>
+                            <label for="hombre">Hombre</label>
+
+                            <input type=radio class="genero" name="genero" id="mujer" value="Mujer" />
+                            <label for="mujer">Mujer</label>
+
+                            <input type=radio class="genero" name="genero" id="otros" value="Otros" />
+                            <label for="otros">Otros</label>
+
                             <span class="help-block"></span>
                         </div>
 
                         <div class="form-group">
-                            <label for="avatar">Avatar: </label><br/>
+                            <label for="avatar">Foto de perfil: </label><br/>
                             <input type="file" class="form-control" name="avatar" id="avatar" value="" />
                             <span class="help-block"></span>
                         </div>
