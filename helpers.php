@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function getUsers ($pathDB)
 {
 	$usuarios = [];
@@ -34,4 +34,12 @@ function getUserByUsername ($nombre, $pathDB)
 		}
 	}
 	return $usuario;
+}
+
+function usuarioLogueado() {
+	if (isset($_SESSION["nombre"])) {
+		return true;
+	} else {
+		return false;
+	}
 }
