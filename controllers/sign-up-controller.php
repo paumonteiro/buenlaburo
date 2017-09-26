@@ -40,7 +40,7 @@ $repassword = trim($_POST['repassword']);
 if (empty($repassword)) {
 	$errores['repassword'] = 'Reingresar contraseña';
 } elseif ($repassword !== $password) {
-  $errores['repassword'] = 'Esta contraseña no coincide';
+  $errores['repassword'] = 'Las contraseñas no coinciden';
 }
 
 if (getUserByUsername($nombre, '../db/usuarios.json')) {
@@ -51,6 +51,7 @@ if (getUserByEmail($email, '../db/usuarios.json')) {
 	$errores['email'] = 'El email ya existe en la base';
 }
 
+$genero = ($_POST['genero']);
 if (empty($_POST['genero'])) {
 	$errores['genero'] = 'El genero es obligatorio';
 }
