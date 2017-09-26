@@ -18,7 +18,7 @@
               <a href="index.php"><img src="img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
           </div>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Productos</a></li>
+            <li class="active"><a href="pagina-producto.php">Productos</a></li>
             <li><a href="#">#JoinTheCrew</a></li>
             <li><a href="#">Contacto</a></li>
             <li><a href="Faq.php">FAQS</a></li>
