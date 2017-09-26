@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require '../helpers.php';
 
 define('DB_PATH', '../db/usuarios.json');
