@@ -1,3 +1,7 @@
+<?php
+include('helpers.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,10 +28,12 @@
               <li><a href="#">Contacto</a></li>
               <li><a href="Faq.php">FAQS</a></li>
             </ul>
+            <?php if (!usuarioLogueado()): ?>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="Sign-up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
               <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
+            <?php endif; ?>
           </div>
         </nav>
 

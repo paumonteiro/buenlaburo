@@ -1,3 +1,7 @@
+<?php
+include('helpers.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,10 +27,12 @@
             <li><a href="#">Contacto</a></li>
             <li><a href="Faq.php">FAQS</a></li>
           </ul>
+          <?php if (!usuarioLogueado()): ?>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="Sign-up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
+          <?php endif; ?>
         </div>
       </nav>
       <!-- CAROUSEL O SLIDER -->
@@ -35,6 +41,9 @@
           <div class="item active"> <!-- Imagen 1 -->
             <img src="img/slider-1.jpg" alt="Chania">
             <div class="carousel-caption">
+              <h2 class="titulo">Camperas Impermeables</h2>
+              <p class="subtitulo"> La moda es sobre vestir de acuerdo a lo que esta de moda. El estilo es más sobre ser tú mismo</p>
+              <h4 class="cita"> Oscar de la Renta</h4>
             </div>
           </div>
           <div class="item"> <!-- Imagen 2 -->

@@ -1,3 +1,29 @@
+<?php
+include('helpers.php');
+
+if (!isset($_SESSION["nombre"]) && isset($_COOKIE["nombre"])) {
+  $_SESSION["nombre"] = $_COOKIE["nombre"];
+}
+
+if ($_POST) {
+  $logueo = getUserByUsername($_POST["nombre"], 'db/usuarios.json');
+
+  if ($logueo !== false) {
+    if (password_verify($_POST["password"], $logueo["password"]) == true) {
+      $_SESSION["nombre"] = $logueo["nombre"];
+
+      if (isset($_POST["recordar"])) {
+        setcookie("nombre", $_SESSION["nombre"], time()+60*60*24);
+      }
+    }
+  } else {
+    $errores["nombre"] = "No se encuentra el usuario";
+  }
+}
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,10 +50,12 @@
               <li><a href="#">Contacto</a></li>
               <li><a href="Faq.php">FAQS</a></li>
             </ul>
+            <?php if (!usuarioLogueado()): ?>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="Sign-up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
               <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
+          <?php endif; ?>
           </div>
         </nav>
 
@@ -38,7 +66,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form  action="controller.php" method="post">
+                <form  action="Login.php" method="post">
                     <fieldset>
 
                         <div class="form-group">
@@ -59,6 +87,7 @@
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Enviar</button>
+                            <a href="Sign-up.php" type="button" class="btn btn-default-2">Crear cuenta</a>
                         </div>
                     </fieldset>
                 </form>

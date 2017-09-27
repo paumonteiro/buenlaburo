@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require '../helpers.php';
 
 define('DB_PATH', '../db/usuarios.json');
@@ -97,6 +95,9 @@ function guardarImagen($inputName, $imageName, $path)
 		return $imageName.'.'.$ext;
 	}
 }
+
+/* iniciar session */
+
 
 header('Location: ../exito.php');
 
