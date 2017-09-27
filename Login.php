@@ -1,9 +1,6 @@
 <?php
 include('helpers.php');
 
-if (!isset($_SESSION["nombre"]) && isset($_COOKIE["nombre"])) {
-  $_SESSION["nombre"] = $_COOKIE["nombre"];
-}
 
 if ($_POST) {
   $logueo = getUserByUsername($_POST["nombre"], 'db/usuarios.json');
@@ -56,7 +53,7 @@ if ($_POST) {
               <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
             <?php else:  ?>
-              <li><a href="Logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
+              <li id="btn-logout"><a href="Logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
           <?php endif; ?>
           </div>
         </nav>

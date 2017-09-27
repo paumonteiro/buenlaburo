@@ -209,6 +209,14 @@ button{
   text-align: center;
   }
 
+/*BOTON LOGOUT*/
+#btn-logout a{
+  color: #fff;
+  text-decoration: none;
+  float: right;
+  margin-top: 15px;
+}
+
 
 /* MEDIA QUERY PARA DESKTOP*/
 @media only screen and (min-width : 768px) {

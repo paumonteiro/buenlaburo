@@ -61,6 +61,7 @@ if (count($errores) > 0) {
 	exit;
 }
 
+
 //Crear Imagen
 $imageName = uniqid();
 $nombreCompleto = guardarImagen('avatar', $imageName, '../avatares/');
@@ -97,9 +98,12 @@ function guardarImagen($inputName, $imageName, $path)
 }
 
 /* iniciar session */
+$_SESSION["nombre"] = $nombre;
 
+header('Location: ../index.php');
 
-header('Location: ../exito.php');
+setcookie('nombre', $nombre, time()+3600);
+
 
 // session_destroy();
 // setcookie('posicion del cookie', 'valor del cookie', time()+tiempoquequierasennumeros);

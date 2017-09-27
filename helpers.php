@@ -43,3 +43,7 @@ function usuarioLogueado() {
 		return false;
 	}
 }
+
+if (!isset($_SESSION["nombre"]) && isset($_COOKIE["nombre"])) {
+  $_SESSION["nombre"] = $_COOKIE["nombre"];
+}
