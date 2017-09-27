@@ -41,7 +41,7 @@
       <p> Ingresaste con exito. </p>
     </div>
 
-<button type="button" class="btn btn-default">Volver a la página de inicio</button>
+<button type="button" class="btn btn-default"> <a href="index.php">Volver a la página de inicio</a></button>
 
   </body>
 
