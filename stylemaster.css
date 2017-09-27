@@ -200,7 +200,6 @@ button{
   margin-top: 80px;
 }
 
-<<<<<<< Updated upstream
 .felicitaciones {
   position: relative;
   overflow: hidden;
@@ -208,12 +207,9 @@ button{
   height: 60px;
   width: 414px;
   text-align: center;
-=======
-/* Pagina exito */
-.exito{
-  padding: 400px;
->>>>>>> Stashed changes
-}
+  }
+
+
 /* MEDIA QUERY PARA DESKTOP*/
 @media only screen and (min-width : 768px) {
 
@@ -261,9 +257,8 @@ button{
     text-decoration: none;
     font-size: 20px;
   }
-  /* FOOTER */
 
-  }
+
 .felicitaciones {
   position: relative;
   top: 50px;
@@ -275,7 +270,6 @@ button{
   position: relative;
   top: 80px;
   left: 410px;
-
 }
 
-/* Cierre de media Query */
+} /* Cierre de media Query */

@@ -56,7 +56,7 @@ if ($_POST) {
               <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
             <?php else:  ?>
-              <li><a href="Logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+              <li><a href="Logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
           <?php endif; ?>
           </div>
         </nav>
