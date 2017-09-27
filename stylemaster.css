@@ -14,6 +14,7 @@ hr {
   max-width: 58%;
   border: solid 0.5px;
 }
+
 h1 {
   font-weight: bolder;
   text-align:  center;
@@ -181,24 +182,6 @@ button{
   cursor: pointer;
 }
 
-/* EMOJI DE DIABLITO */
-.diablito {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  left: 230px;
-  top: 105px;
-}
-
-/*EMOJI DEL UNICORNIO */
-.unicornio {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  left: 30px;
-  top: 155px;
-}
-
 /* EL FORGOT YOUR PASSWORD Y EL REMEMBER ME (CHECKBOX) */
 .forgot {
   position: relative;
@@ -217,6 +200,20 @@ button{
   margin-top: 80px;
 }
 
+<<<<<<< Updated upstream
+.felicitaciones {
+  position: relative;
+  overflow: hidden;
+  top: 30px;
+  height: 60px;
+  width: 414px;
+  text-align: center;
+=======
+/* Pagina exito */
+.exito{
+  padding: 400px;
+>>>>>>> Stashed changes
+}
 /* MEDIA QUERY PARA DESKTOP*/
 @media only screen and (min-width : 768px) {
 
@@ -267,4 +264,18 @@ button{
   /* FOOTER */
 
   }
+.felicitaciones {
+  position: relative;
+  top: 50px;
+  left: 110px;
+  width: 800px;
+}
+
+.btn-default {
+  position: relative;
+  top: 80px;
+  left: 410px;
+
+}
+
 /* Cierre de media Query */

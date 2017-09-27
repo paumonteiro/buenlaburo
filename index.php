@@ -22,7 +22,7 @@ include('helpers.php');
               <a href="index.php"><img src="img/logo.png" alt="logo-juanito-ya" class="logo"></a> <!-- LOGO -->
           </div>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Productos</a></li>
+            <li class="active"><a href="pagina-producto.php">Productos</a></li>
             <li><a href="#">#JoinTheCrew</a></li>
             <li><a href="#">Contacto</a></li>
             <li><a href="Faq.php">FAQS</a></li>
@@ -41,6 +41,9 @@ include('helpers.php');
           <div class="item active"> <!-- Imagen 1 -->
             <img src="img/slider-1.jpg" alt="Chania">
             <div class="carousel-caption">
+              <h2 class="titulo">Camperas Impermeables</h2>
+              <p class="subtitulo"> La moda es sobre vestir de acuerdo a lo que esta de moda. El estilo es más sobre ser tú mismo</p>
+              <h4 class="cita"> Oscar de la Renta</h4>
             </div>
           </div>
           <div class="item"> <!-- Imagen 2 -->
