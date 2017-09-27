@@ -96,6 +96,9 @@ function guardarImagen($inputName, $imageName, $path)
 	}
 }
 
+/* iniciar session */
+
+
 header('Location: ../exito.php');
 
 // session_destroy();
