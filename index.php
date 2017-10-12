@@ -32,7 +32,9 @@ include('helpers.php');
             <li><a href="Sign-up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
-          <?php endif; ?>
+          <?php else:  ?>
+            <li id="btn-logout"><a href="Logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
+        <?php endif; ?>
         </div>
       </nav>
       <!-- CAROUSEL O SLIDER -->

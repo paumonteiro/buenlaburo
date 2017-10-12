@@ -1,4 +1,5 @@
 <?php
+include('helpers.php');
  ?>
 
 <!DOCTYPE html>
