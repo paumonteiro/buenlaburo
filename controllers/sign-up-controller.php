@@ -1,7 +1,9 @@
 <?php
 require '../helpers.php';
+require '../db/pdo.php';
 
-define('DB_PATH', '../db/usuarios.json');
+
+define('DB_PATH', '../db/pdo.php');
 
 $errores = [];
 
@@ -77,13 +79,59 @@ $usuario = [
 	'avatar' => $nombreCompleto
 ];
 
+guardarUsuario($usuario);
 //Recuperar data
-$usuarios = getUsers('../db/usuarios.json');
+//$usuarios = getUsers('../db/pdo.php');
 
 //Guardar usuario
-$usuarios[] = $usuario;
+/*$usuarios[] = $usuario;
 $json = json_encode($usuarios);
-file_put_contents(DB_PATH, $json);
+file_put_contents(DB_PATH, $json);*/
+
+function guardarUsuario($usuario) {
+	global $db;
+	$query = $db->prepare("Insert into usuarios values(default, :firstname, :lastname,:nombre,:email, :password, :genero, :avatar)");
+	//var_dump($usuario);
+
+	$query->bindValue(":firstname", $usuario["firstname"]);
+	$query->bindValue(":lastname", $usuario["lastname"]);
+	$query->bindValue(":nombre", $usuario["nombre"]);
+	$query->bindValue(":email", $usuario["email"]);
+	$query->bindValue(":password", $usuario["password"]);
+	$query->bindValue(":genero", $usuario["genero"]);
+	$query->bindValue(":avatar", $usuario["avatar"]);
+
+	$id = $db->lastInsertId();
+	$usuario["id"] = $id;
+
+		//var_dump($query);
+		//exit;
+	$query->execute();
+
+	return $usuario;
+
+}
+
+function traerTodos() {
+	global $db;
+
+	$query = $db->prepare("Select * from usuarios");
+	$query->execute();
+
+	return $query->fetchAll();
+}
+
+function traerPorMail($email) {
+	global $db;
+
+	$query = $db->prepare("Select * from usuarios where email = :email");
+	$query->bindValue(":email", $email);
+
+	$query->execute();
+
+	return $query->fetch();
+}
+
 
 function guardarImagen($inputName, $imageName, $path)
 {
