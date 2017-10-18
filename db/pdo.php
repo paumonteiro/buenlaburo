@@ -1,9 +1,9 @@
 <?php
 
 $dsn = 'mysql:host=localhost;dbname=Juanito_Ya;
-charset=utf8mb4;port=3306';
+charset=utf8mb4;port=8889';
 $user ="root";
-$pass = "";
+$pass = "root";
 
 try {
   $db = new PDO($dsn, $user, $pass);

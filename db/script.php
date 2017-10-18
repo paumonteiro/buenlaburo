@@ -36,5 +36,4 @@ $query->execute();
 
 }
 
-
 $db=null;
