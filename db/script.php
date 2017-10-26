@@ -6,15 +6,13 @@ function getUsers ($db){
   $usuarios = [];
   if (file_exists($db))
    {
-     $json = file_get_contents($db);
+    $json = file_get_contents($db);
     $usuarios = json_decode($json,true);
   }
   return $usuarios;
 }
 
-
-
-$usuarios = getUsers ('usuarios.json');
+$usuarios = getUsers('usuarios.json');
 
 // ahora ya tengo todos los usuarios en un array asociativo
 
