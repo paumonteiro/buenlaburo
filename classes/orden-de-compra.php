@@ -1,5 +1,4 @@
 <?php
-namespace Orden_de_compra;
 
 Class Orden_de_compra {
 

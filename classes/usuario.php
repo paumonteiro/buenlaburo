@@ -1,5 +1,4 @@
 <?php
-namespace Usuario;
 
 Class Usuario {
 
@@ -15,16 +14,22 @@ Class Usuario {
 
 
     //Funcion constructora
-    public function __construct($id,$firstname,$lastname,$nombre,$email,$password,$genero,$avatar){
-      $this->id = $id;
-      $this->firstname = $firstname;
-      $this->lastname = $lastname;
-      $this->nombre = $nombre;
-      $this->email = $email;
-      $this->setPassword($password);
-      $this->genero = $genero;
-      $this->avatar = $avatar;
+    public function __construct($datos) {
+      if (isset($datos["id"])) {
+        $this->id = $datos["id"];
+        $this->password = $datos["password"];
+      }
+      else {
+        $this->password = password_hash($datos["password"], PASSWORD_DEFAULT);
+      }
+      $this->firstname = $datos["firstname"];
+      $this->lastname = $datos["lastname"];
+      $this->nombre = $datos["nombre"];
+      $this->email = $datos["email"];
+      $this->genero = $datos["genero"];
+      $this->avatar = $datos["avatar"];
     }
+
 
 
     //Métodos de la clase
@@ -70,7 +75,7 @@ Class Usuario {
 
 
     public function setPassword($password){
-      $this->password = password_hash($password, PASSWORD_BCRYPT);
+      $this->password = $password;
     }
     public function getPassword(){
       return $this->password;
@@ -85,14 +90,16 @@ Class Usuario {
     }
 
 
-    public function setAvatar($avatar){
-      $this->avatar = $avatar;
-    }
-    public function getAvatar(){
-      return $this->avatar;
-    }
+    public function guardarImagen() {
+      $nombre=$_FILES["avatar"]["name"];
+      $archivo=$_FILES["avatar"]["tmp_name"];
 
+      $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
+      $miArchivo = "img/" . $this->getEmail() . "." . $ext;
+
+      move_uploaded_file($archivo, $miArchivo);
+    }
 
 
   }

@@ -1,5 +1,4 @@
 <?php
-namespace Producto;
 
 Class Prodcuto {
 

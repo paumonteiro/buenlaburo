@@ -1,5 +1,4 @@
 <?php
-namespace Talle;
 
 Class Talle {
 
