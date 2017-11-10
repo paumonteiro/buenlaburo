@@ -22,9 +22,9 @@ class DBMySQL extends DB {
 
   public function guardarUsuario(Usuario $usuario) {
 
-		$query = $this->db->prepare("Insert into usuarios values(default, :email, :password,:edad,:username,:pais)");
+		$query = $this->db->prepare("Insert into usuarios values(default, :firstname, :lastname, :nombre, :email, :password,:genero,:avatar)");
 
-		$query->bindValue(":id", $usuario->getId());
+
     $query->bindValue(":firstname", $usuario->getFirstname());
     $query->bindValue(":lastname", $usuario->getLastname());
     $query->bindValue(":nombre", $usuario->getNombre());
@@ -33,13 +33,19 @@ class DBMySQL extends DB {
 		$query->bindValue(":genero", $usuario->getGenero());
 		$query->bindValue(":avatar", $usuario->getAvatar());
 
-
 		$id = $this->db->lastInsertId();
+
 		$usuario->setId($id);
+
 
 		$query->execute();
 
 		return $usuario;
+
+
+
+
+
   }
 
   public function traerTodos() {

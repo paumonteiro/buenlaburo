@@ -27,7 +27,7 @@ Class Usuario {
       $this->nombre = $datos["nombre"];
       $this->email = $datos["email"];
       $this->genero = $datos["genero"];
-      $this->avatar = $datos["avatar"];
+
     }
 
 
@@ -89,16 +89,22 @@ Class Usuario {
       return $this->genero;
     }
 
+    public function getAvatar(){
+      return $this->avatar;
+    }
 
-    public function guardarImagen() {
-      $nombre=$_FILES["avatar"]["name"];
-      $archivo=$_FILES["avatar"]["tmp_name"];
+
+    public function guardarImagen($filesDeForm) {
+      $nombre=$filesDeForm["avatar"]["name"];
+      $archivo=$filesDeForm["avatar"]["tmp_name"];
 
       $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
       $miArchivo = "img/" . $this->getEmail() . "." . $ext;
 
       move_uploaded_file($archivo, $miArchivo);
+
+      $this->avatar = $miArchivo;
     }
 
 

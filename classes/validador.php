@@ -1,9 +1,9 @@
 <?php
 
-require_once("../db/pdo.php");
+require_once("db/pdo.php");
 
 class Validador {
-  public function validarInformacion($informacion, DB $db) {
+  public function validarInformacion($informacion, DB $db, $archivo) {
     $errores = [];
 
 		foreach ($informacion as $clave => $valor) {
@@ -11,16 +11,8 @@ class Validador {
 		}
 
 
-		if (strlen($informacion["name"]) <= 3) {
-			$errores["name"] = "Tenes que poner más de 3 caracteres en tu nombre de usuario";
-		}
-
-		if (is_numeric($informacion["edad"] <= 2 ) {
-			$errores["edad"] = "Tenes que poner dos o mas caracteres en tu edad";
-		}
-
-		if ($informacion["pais"] == "") {
-			$errores["pais"] = "El campo pais debe estar completo";
+		if (strlen($informacion["nombre"]) <= 3) {
+			$errores["nombre"] = "Tenes que poner más de 3 caracteres en tu nombre de usuario";
 		}
 
 		if ($informacion["email"] == "") {
@@ -44,11 +36,11 @@ class Validador {
 			$errores["password"] = "Las contraseñas no coinciden";
 		}
 
-    if ($_FILES["avatar"]["error"] != UPLOAD_ERR_OK)
+    if ($archivo["avatar"]["error"] != UPLOAD_ERR_OK)
 		{
       $errores["avatar"] = "Hubo un error al cargar la imagen";
     } else {
-      $nombre=$_FILES["avatar"]["name"];
+      $nombre=$archivo["avatar"]["name"];
 
 			$ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
@@ -70,7 +62,7 @@ class Validador {
 
 
 		if ($informacion["email"] == "") {
-			$errores["email"] = "el mail esta incompleto";
+			$errores["email"] = "El mail esta incompleto";
 		}
 		else if (filter_var($informacion["email"], FILTER_VALIDATE_EMAIL) == false) {
 			$errores["email"] = "El mail tiene que ser un mail";

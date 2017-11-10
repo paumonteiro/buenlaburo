@@ -17,7 +17,7 @@ class Auth {
     $_SESSION["logueado"] = $email;
   }
 
-  public function estaLogueado() {
+  public static function estaLogueado() {
     return isset($_SESSION["logueado"]);
   }
 
