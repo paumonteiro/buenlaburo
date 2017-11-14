@@ -1,9 +1,6 @@
-    </div>
-</body>
 
-<footer class="main-footer col-xs-12">
-  <div class="container">
-    <nav class="navbar navbar-inverse">
+<footer class="footer">
+    <nav class=" navbar-inverse">
       <div class="container-fluid">
         <h6>BuenLaburo Inc.</h6>
       </div>

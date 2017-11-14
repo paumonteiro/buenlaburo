@@ -1,9 +1,6 @@
 <?php
-session_start();
-session_destroy();
+require("soporte.php");
+$auth->logout();
+header("Location:index.php");exit;
 
-unset($_COOKIE['nombre']);
-setcookie('nombre', false, 10);
-
-header('Location: index.php');
- ?>
+?>
