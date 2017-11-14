@@ -41,12 +41,12 @@ require_once("classes/usuario.php");
 
 		if (count($errores) == 0) {
 			$usuario = new Usuario($_POST);
-			$mail = $_POST["email"];
-
-			$usuario->guardarImagen($_FILES);
+			$nombre = $_POST["nombre"];
 			$usuario = $db->guardarUsuario($usuario);
+			$usuario->guardarImagen($_FILES);
+			$auth->loguear($_POST["nombre"]);
 
-			header("Location:miPerfil.php?mail=$mail");exit;
+			header("Location:exito.php?nombre=$nombre");exit;
 		}
 	}
 

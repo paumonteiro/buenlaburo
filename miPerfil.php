@@ -1,20 +1,16 @@
 <?php
 include('soporte.php');
+include("header.php");
 
-  if (!$auth->estaLogueado()) {
-    header("Location:index.php");exit;
-  }
 
   $usuarioLogueado = $auth->usuarioLogueado($db);
-
   $nombre = $usuarioLogueado->getNombre();
 
-  include("header.php");
 ?>
 
 
-  <h1>Inicio</h1>
-  <h2>Bienvenido <?=$nombre?> a tu perfil</h2>
+  <h1>Bienvenido</h1>
+  <h2><?=$nombre?> a tu perfil</h2>
 
 
 </div>

@@ -6,15 +6,14 @@ require_once("db.php");
 class Auth {
 
   public function __construct() {
-    session_start();
 
   	if (!isset($_SESSION["logueado"]) && isset($_COOKIE["logueado"])) {
   		$_SESSION["logueado"] = $_COOKIE["logueado"];
   	}
   }
 
-  public function loguear($email) {
-    $_SESSION["logueado"] = $email;
+  public function loguear($nombre) {
+    $_SESSION["logueado"] = $nombre;
   }
 
   public static function estaLogueado() {
@@ -23,8 +22,8 @@ class Auth {
 
   public function usuarioLogueado(DB $db) {
     if ($this->estaLogueado()) {
-      $mail = $_SESSION["logueado"];
-      return $db->traerPorMail($mail);
+      $nombre = $_SESSION["logueado"];
+      return $db->traerPorNombre($nombre);
     } else {
       return NULL;
     }

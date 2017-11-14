@@ -10,19 +10,22 @@ class Validador {
 			$informacion[$clave] = trim($valor);
 		}
 
+    if (isset($informacion["nombre"])) {
+  		if (strlen($informacion["nombre"]) <= 3) {
+  			$errores["nombre"] = "Tenes que poner más de 3 caracteres en tu nombre de usuario";
+  		}
+    }
 
-		if (strlen($informacion["nombre"]) <= 3) {
-			$errores["nombre"] = "Tenes que poner más de 3 caracteres en tu nombre de usuario";
-		}
-
-		if ($informacion["email"] == "") {
-			$errores["email"] = "El email debe estar completo";
-		}
-		else if (filter_var($informacion["email"], FILTER_VALIDATE_EMAIL) == false) {
-			$errores["email"] = "El email tiene que ser un email valido";
-		} else if ($db->traerPorMail($informacion["email"]) != NULL) {
-			$errores["email"] = "El usuario ya existe!";
-		}
+    if (isset($informacion["email"])) {
+  		if ($informacion["email"] == "") {
+  			$errores["email"] = "El email debe estar completo";
+  		}
+  		else if (filter_var($informacion["email"], FILTER_VALIDATE_EMAIL) == false) {
+  			$errores["email"] = "El email tiene que ser un email valido";
+  		} else if ($db->traerPorMail($informacion["email"]) != NULL) {
+  			$errores["email"] = "El usuario ya existe!";
+  		}
+    }
 
 		if ($informacion["password"] == "") {
 			$errores["password"] = "No llenaste la contraseña";
@@ -61,26 +64,29 @@ class Validador {
 		}
 
 
-		if ($informacion["email"] == "") {
-			$errores["email"] = "El mail esta incompleto";
+		if ($informacion["nombre"] == "") {
+			$errores["nombre"] = "El mail esta incompleto";
 		}
-		else if (filter_var($informacion["email"], FILTER_VALIDATE_EMAIL) == false) {
-			$errores["email"] = "El mail tiene que ser un mail";
-		} else if ($db->traerPorMail($informacion["email"]) == NULL) {
-			$errores["email"] = "El usuario no esta en nuestra base";
-		}
+		// else if (filter_var($informacion["nombre"], FILTER_VALIDATE_EMAIL) == false) {
+		// 	$errores["nombre"] = "El mail tiene que ser un mail";
+		// } else if ($db->traerPorMail($informacion["nombre"]) == NULL) {
+		// 	$errores["nombre"] = "El usuario no esta en nuestra base";
+		// }
 
-		$usuario = $db->traerPorMail($informacion["email"]);
+		$usuario = $db->traerPorNombre($informacion["nombre"]);
 
 		if ($informacion["password"] == "") {
 			$errores["password"] = "No llenaste la contraseña";
-		} else if ($usuario != NULL) {
+		} else if ($usuario !== NULL) {
 			//El usuario existe y puso contraseña
 			// Tengo que validar que la contraseño que ingreso sea valida
 			if (password_verify($informacion["password"], $usuario->getPassword()) == false) {
 				$errores["password"] = "La contraseña no verifica";
 			}
-		}
+		} else {  // Arreglar arriba y sacar esto     
+      $errores["nombre"] = "Usuario no encontrado";
+    }
+
 
 
 

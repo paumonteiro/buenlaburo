@@ -77,6 +77,22 @@ class DBMySQL extends DB {
       return null;
     }
   }
+
+  public function traerPorNombre($nombre) {
+		$query = $this->db->prepare("Select * from usuarios where nombre = :nombre");
+		$query->bindValue(":nombre", $nombre);
+
+		$query->execute();
+
+		$usuario = $query->fetch();
+
+    if ($usuario != null) {
+      return new Usuario($usuario);
+    }
+    else {
+      return null;
+    }
+  }
 }
 
 ?>

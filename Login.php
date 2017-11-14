@@ -11,12 +11,12 @@
 		$errores = $validador->validarLogin($_POST, $db);
 		if (count($errores) == 0) {
 			// LOGUEAR
-      $auth->loguear($_POST["email"]);
+      $auth->loguear($_POST["nombre"]);
 			if (isset($_POST["recordame"])) {
 				//Quiere que lo recuerde
-				$auth->recordame($_POST["email"]);
+				$auth->recordame($_POST["nombre"]);
 			}
-      header("Location:index.php");
+      header("Location:index.php");exit;
 		}
 	}
 
@@ -50,8 +50,8 @@
 			                  </div>
 
 			                  <div class="form-group">
-			                      <button type="submit" class="btn btn-default">Login</button>
-			                      <a href="index.php" type="button" class="btn btn-default-2">Entrar</a>
+			                      <button type="submit" class="btn btn-default-2">Entrar</button>
+			                      <a href="register.php" type="text" class="texto-chico">Crear nueva cuenta</a>
 			                  </div>
 			              </fieldset>
 			          </form>

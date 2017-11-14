@@ -226,6 +226,11 @@ button{
   margin-top: 15px;
 }
 
+.texto-chico {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
 
 /* MEDIA QUERY PARA DESKTOP*/
 @media only screen and (min-width : 768px) {

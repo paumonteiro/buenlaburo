@@ -19,8 +19,6 @@
     <!--- FONTAWESOME ------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!--- AUTH ------------>
-    <? include('soporte.php'); ?>
 
 
   </head>
@@ -34,7 +32,7 @@
         </div>
 
         <ul class="nav navbar-nav">
-          <li><a href="">Productos</a></li>
+          <li><a href="">Tienda</a></li>
           <li><a href="#">#JoinTheCrew</a></li>
           <li><a href="#">Contacto</a></li>
           <li><a href="faq.php">FAQS</a></li>
