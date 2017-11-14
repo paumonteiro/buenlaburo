@@ -231,6 +231,10 @@ button{
   margin-left: 10px;
 }
 
+.centrado {
+  text-align: center;
+}
+
 
 /* MEDIA QUERY PARA DESKTOP*/
 @media only screen and (min-width : 768px) {
