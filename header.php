@@ -32,7 +32,7 @@
         </div>
 
         <ul class="nav navbar-nav">
-          <li><a href="">Tienda</a></li>
+          <li><a href="tienda.php">Tienda</a></li>
           <li><a href="#">#JoinTheCrew</a></li>
           <li><a href="#">Contacto</a></li>
           <li><a href="faq.php">FAQS</a></li>
